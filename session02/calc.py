@@ -87,7 +87,8 @@ dpdt = dist_in_miles/seconds_to_hours   #miles/hour
 #print(dpdt)
 #in order to verify the result
 
-#Round down to two decimal places for human readability
+#Round down to two decimal places to avoid overrepresentation and
+#for human readability
 dpdt = math.floor(dpdt*100)/100
 
 #print(dpdt)
