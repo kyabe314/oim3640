@@ -62,7 +62,7 @@ pace_in_seconds = seconds_total/dist_in_miles                               #sec
 
 pace_minutes_component = math.floor(pace_in_seconds/60)                     #minutes
 pace_seconds_component = pace_in_seconds-pace_minutes_component*60      #seconds
-pace_seconds_component = int(math.floor(pace_seconds_component))            #seconds, rounded down to avoid overrepresentation
+pace_seconds_component = int(round(pace_seconds_component))            #seconds, rounded 
 
 #print(pace_minutes_component)
 #print(pace_seconds_component)
@@ -87,9 +87,8 @@ dpdt = dist_in_miles/seconds_to_hours   #miles/hour
 #print(dpdt)
 #in order to verify the result
 
-#Round down to two decimal places to avoid overrepresentation and
-#for human readability
-dpdt = math.floor(dpdt*100)/100
+#Round to two decimal places for human readability
+dpdt = round(dpdt, 2)
 
 #print(dpdt)
 
