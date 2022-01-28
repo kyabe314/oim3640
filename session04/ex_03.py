@@ -1,4 +1,3 @@
-from msilib.schema import Component
 import time
 # print(time.time_ns())
 # avoid precision loss
@@ -38,19 +37,9 @@ hours_component = hours_split[0]
 days_split = divmod(hours_component, 24)
 hours_final = days_split[1]
 days_component = days_split[0]
-# print(days_component, hours_final, minutes_final, seconds_final)
+print(days_component, hours_final, minutes_final, seconds_final)
 
 # The number of days which have passed since the epoch time
-print(days_component)
+# (days_component)
 
-# leap year calculation
-# 1972 is the first leap year since the epoch time
-# calculate how many leap year has come
-
-
-# to years
-months_split = divmod(days_component, 365.25)
-# In order for 365.25 to work, it has to be after February 29th of a leap year
-days_final = months_split[1]
-months_component = months_split[0]
-# print(months_component, days_final, hours_final, minutes_final, seconds_final)
+print(f'It has been {days_component} days since the epoch date of January 1st, 1970.\nThe current time is {hours_final:0>2d}:{minutes_final:0>2d}:{seconds_final:0>2d} GMT.')
