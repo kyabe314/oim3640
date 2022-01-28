@@ -96,27 +96,8 @@ minute_component_arrival = int(
 
 # print(second_component_arrival)
 
-if hour_component_arrival < 10:
-    hour_component_arrival = str(hour_component_arrival)
-    hour_component_arrival = '0' + hour_component_arrival
-else:
-    hour_component_arrival = str(hour_component_arrival)
-
-
-if minute_component_arrival < 10:
-    minute_component_arrival = str(minute_component_arrival)
-    minute_component_arrival = '0' + minute_component_arrival
-else:
-    minute_component_arrival = str(minute_component_arrival)
-
-if second_component_arrival_rounded < 10:
-    second_component_arrival_rounded = str(second_component_arrival_rounded)
-    second_component_arrival_rounded = '0' + second_component_arrival_rounded
-else:
-    second_component_arrival_rounded = str(second_component_arrival_rounded)
-
 print(
-    f'A3. You will get home at {hour_component_arrival}:{minute_component_arrival}:{second_component_arrival_rounded:} am for breakfast.')
+    f'A3. You will get home at {hour_component_arrival:0>2d}:{minute_component_arrival:0>2d}:{second_component_arrival_rounded:0>2d} am for breakfast.')
 
 # ex02-04
 # If my average grade rises from 82 to 89.
