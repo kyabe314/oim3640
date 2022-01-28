@@ -1,5 +1,7 @@
 import math
 
+# Alt + Shift + F = Formatting
+
 # ex02-01
 # What is the volume of a sphere with r = 5?
 #
@@ -10,7 +12,7 @@ import math
 radius = 5
 
 # Calculate the volume of the sphere
-volume_sphere = (4/3)*math.pi*radius ** 3
+volume_sphere = (4/3) * math.pi * radius ** 3
 
 print(
     f'A1. The volume of sphere with the radius of {radius} is {volume_sphere:.2f} centimeter cubed.')
@@ -126,3 +128,5 @@ grade_avg_after = 89
 percentage_change = (grade_avg_after / grade_avg_before - 1) * 100
 
 print(f'A4. The percentage of the increase is {percentage_change:.1f} %.')
+
+
