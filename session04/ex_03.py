@@ -37,9 +37,23 @@ hours_component = hours_split[0]
 days_split = divmod(hours_component, 24)
 hours_final = days_split[1]
 days_component = days_split[0]
-print(days_component, hours_final, minutes_final, seconds_final)
+# print(days_component, hours_final, minutes_final, seconds_final)
 
 # The number of days which have passed since the epoch time
 # (days_component)
 
 print(f'It has been {days_component} days since the epoch date of January 1st, 1970.\nThe current time is {hours_final:0>2d}:{minutes_final:0>2d}:{seconds_final:0>2d} GMT.')
+
+# EST
+# EST = GMT - 5
+
+# print(hours_final)
+
+est = 5
+
+if hours_final < est:
+    hours_final = hours_final + 19
+else:
+    hours_final = hours_final - 5
+
+print(f'The current time is {hours_final:0>2d}:{minutes_final:0>2d}:{seconds_final:0>2d} EST.')
