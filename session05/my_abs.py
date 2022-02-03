@@ -37,6 +37,7 @@ def my_abs3(number):
 
 
 def input_func():
+    """Input function for my_abs"""
     x = input('Choose function number from 1, 2, and 3 and enter here >>> ')
     if x == '1':
         my_abs1(float(input('Enter number for my_abs1 >>> ')))
