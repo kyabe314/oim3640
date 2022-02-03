@@ -1,4 +1,9 @@
-def my_abs(number):
+# ex 04-03~05
+
+
+
+
+def my_abs1(number):
     """print the absolute value of the given number"""
     if number > 0:
         print(number)
@@ -9,7 +14,7 @@ def my_abs(number):
 # my_abs(100)
 
 
-def my_abs_2(number):
+def my_abs2(number):
     """return the absolute value for ex4-04"""
     if number > 0:
         return number
@@ -19,7 +24,7 @@ def my_abs_2(number):
 # print(my_abs_2(-100))
 
 
-def my_abs_3(number):
+def my_abs3(number):
     """return the absolute value for ex4-05"""
     classifier = isinstance(number, int | float)
     if classifier is True:
@@ -31,11 +36,16 @@ def my_abs_3(number):
         return "input neither integer nor float"
 
 
-print(my_abs_3("1"))
+def input_func():
+    x = input('Choose function number from 1, 2, and 3 and enter here >>> ')
+    if x == '1':
+        my_abs1(float(input('Enter number for my_abs1 >>> ')))
+    elif x == '2':
+        my_abs2(float(input('Enter number for my_abs2 >>> ')))
+    elif x == '3':
+        my_abs3(float(input('Enter number for my_abs3 >>> ')))
+    else:
+        print('Invalid input. Please enter 1, 2, or 3.')
+        input_func()
 
-# if number > 0:
-#     return number
-# elif number <= 0:
-#     return -number
-# elif number != int() or float():
-#     return "invalid input"
+input_func()
