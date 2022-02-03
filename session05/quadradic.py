@@ -5,6 +5,7 @@ import math
 import time
 
 def input_func():
+    """Input function for quadratic()."""
     print('Let\'s solve for a quadratic function!')
     time.sleep(1.5)
     print('This function will retrieve roots for a quadratic function in a form of ax^2 + bx + c = 0.')
