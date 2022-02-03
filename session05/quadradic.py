@@ -4,7 +4,6 @@
 import math
 import time
 
-
 def input_func():
     print('Let\'s solve for a quadratic function!')
     time.sleep(1.5)
