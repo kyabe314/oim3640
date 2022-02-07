@@ -19,9 +19,6 @@ print(leo)
 #         t.fd(100)
 #         t.lt(90)
 
-    
-
-
 # square(leo)
 
 # raphael = turtle.Turtle()
