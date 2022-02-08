@@ -109,7 +109,7 @@ leo.reset()
 # ex-03.01
 
 def square_circle(t, n, length, angle):
-    """"""
+    """Repeat squares in a circle shape"""
     for i in range(n):
         square(t, length)
         t.lt(angle)
@@ -121,7 +121,7 @@ leo.reset()
 #ex-03.02
 
 def square_spiral(t, n, length, marginal_length, angle):
-    """"""
+    """Repeat squares in a spiral shape"""
     leo.speed(10)
     for i in range(n):
         square(t, length)
@@ -142,7 +142,7 @@ leo.reset()
 # ex-03.03
 
 def star_spiral(t, n, length, marginal_length, angle, internal_angle):
-    """"""
+    """Repeat stars in a spiral shape"""
     leo.speed(10)
     for i in range(n):
         star(t, 5, length, internal_angle)
@@ -153,14 +153,12 @@ def star_spiral(t, n, length, marginal_length, angle, internal_angle):
 
 # ex-03.04
 
-def spiral(t, n, length, angle):
+def spiral(t, n, length, marginal_length, angle):
+    """Spiral"""
     for i in range(n):
-        leo.fd(length + i)
+        leo.fd(length + marginal_length)
         leo.lt(angle)
 
-spiral(leo, 60, 5, 15)
-
-
-
+spiral(leo, 60, 5, 1, 15)
 
 turtle.mainloop()
