@@ -22,7 +22,7 @@ def moon(weight_on_earth):
 
     weight_on_earth = float(weight_on_earth)
     weight_on_moon = weight_on_earth * 0.165
-    print(f'{weight_on_earth:.2f} kg of weight on earth is {weight_on_moon:.2f} kg of weight on the moon')
+    print(f'{weight_on_earth:.2f} kg of weight on earth is {weight_on_moon:.2f} kg of weight on the moon.')
 
 
 moon(input("Input a weight on earth in kg and I will convert it to weight on the moon in kg! >>> "))
