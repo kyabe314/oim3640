@@ -1,9 +1,8 @@
-from tkinter import N
 import turtle
 import math
 
 leo = turtle.Turtle()
-leo.speed(10)
+
 
 # ex-01
 # Modify the program to draw a square
@@ -88,7 +87,9 @@ def circle(t, r):
 
 # circle(leo, 10)
 
+
 leo.reset()
+
 
 def arc(t, r, angle):
     """this function takes a parameter named, which is a turtle, and other parameters r and angle, which respectively are radius of a circle and fraction of circle to draw."""
@@ -104,9 +105,11 @@ def arc(t, r, angle):
 
 # arc(leo, 100, 180)
 
+
 leo.reset()
 
 # ex-03.01
+
 
 def square_circle(t, n, length, angle):
     """Repeat squares in a circle shape"""
@@ -116,9 +119,11 @@ def square_circle(t, n, length, angle):
 
 # square_circle(leo, 100, 5)
 
+
 leo.reset()
 
-#ex-03.02
+# ex-03.02
+
 
 def square_spiral(t, n, length, marginal_length, angle):
     """Repeat squares in a spiral shape"""
@@ -130,6 +135,7 @@ def square_spiral(t, n, length, marginal_length, angle):
 
 # square_spiral(leo, 60, 30, 4, 5)
 
+
 def star(t, n, length, angle):
     for i in range(n):
         t.fd(length)
@@ -137,9 +143,11 @@ def star(t, n, length, angle):
 
 # star(leo, 5, 30, 36)
 
+
 leo.reset()
 
 # ex-03.03
+
 
 def star_spiral(t, n, length, marginal_length, angle, internal_angle):
     """Repeat stars in a spiral shape"""
@@ -151,9 +159,11 @@ def star_spiral(t, n, length, marginal_length, angle, internal_angle):
 
 # star_spiral(leo, 60, 30, 4, 5, 36)
 
+
 leo.reset()
 
 # ex-03.04
+
 
 def spiral(t, n, length, marginal_length, angle):
     """Spiral"""
@@ -162,6 +172,7 @@ def spiral(t, n, length, marginal_length, angle):
         t.lt(angle)
         length = length + marginal_length
 
-spiral(leo, 60, 5, 1, 10)
+
+spiral(leo, 360, 1, 0.25, 10)
 
 turtle.mainloop()
