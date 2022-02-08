@@ -151,14 +151,17 @@ def star_spiral(t, n, length, marginal_length, angle, internal_angle):
 
 # star_spiral(leo, 60, 30, 4, 5, 36)
 
+leo.reset()
+
 # ex-03.04
 
 def spiral(t, n, length, marginal_length, angle):
     """Spiral"""
     for i in range(n):
-        leo.fd(length + marginal_length)
-        leo.lt(angle)
+        t.fd(length)
+        t.lt(angle)
+        length = length + marginal_length
 
-spiral(leo, 60, 5, 1, 15)
+spiral(leo, 60, 5, 1, 10)
 
 turtle.mainloop()
