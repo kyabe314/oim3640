@@ -42,7 +42,7 @@ Notice:
 """
 
 
-def planet(weight_on_earth, planet):
+def planet(weight_on_earth, name):
     """take weight on earth as the first arguement. Convert the weight on earth to weight on a planet specified in the second arguement."""
 
     # pseudo-code
@@ -51,15 +51,14 @@ def planet(weight_on_earth, planet):
     # 3. return the value
 
     weight_on_earth = float(weight_on_earth)
-    planet = str(planet)
 
-    if planet == 'Moon':
+    if name == 'Moon':
         weight_on_moon = weight_on_earth * 0.165
         return weight_on_moon
-    elif planet == 'Mars':
+    elif name == 'Mars':
         weight_on_mars = weight_on_earth * 0.378
         return weight_on_mars
-    elif planet == 'Jupiter':
+    elif name == 'Jupiter':
         weight_on_jupiter = weight_on_earth * 2.528
         return weight_on_jupiter
 
