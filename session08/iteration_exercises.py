@@ -202,3 +202,24 @@ def test_square_root():
 
 print(tabulate(test_square_root(), headers=[
       'a', 'mysqrt(a)', 'math.sqrt(a)', 'diff'], numalign='left', floatfmt=('.1f', "", "", "")))
+
+# alternative approach
+
+def test_square_root_for_loop():
+    """
+    Using a 'for' loop, retrieve
+    """
+
+    table = list()
+
+    for i in range(1, 10):
+        table.append(
+            [float(i), mysqrt(i), math.sqrt(i), math.sqrt(i)-mysqrt(i)])
+    
+    return table
+
+# test code
+
+print()
+print(tabulate(test_square_root_for_loop(), headers=[
+      'a', 'mysqrt(a)', 'math.sqrt(a)', 'diff'], numalign='left', floatfmt=('.1f', "", "", "")))
