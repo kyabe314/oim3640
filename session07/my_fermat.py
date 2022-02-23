@@ -16,7 +16,6 @@ def check_fermat(a, b, c, n):
 # check_fermat(3, 4, 5, 3)
 
 
-# ex-01.1.2
 # Write another function that prompts the user to input values for a, b, c and n, converts them to integers, and uses check_fermat to check whether they violate Fermat’s theorem.
 
 def input_fermat():
