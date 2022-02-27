@@ -150,11 +150,10 @@ def exhaustive_search_of_5_forbidden_letters():
 # ex-01.04
 
 def uses_only(word, criteria):
-
         for letter in word:
             if letter not in criteria:
                 return False
-            return True
+        return True
 
 def planets():
     """
