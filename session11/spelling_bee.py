@@ -14,10 +14,7 @@ def todays_spelling_bee():
     for line in f:
         line = line.strip()
         if len(line) >= 4:
-            test_1 = has_o(line)
-            if test_1 is True:
-                test_2 = uses_only(line, 'ogwnhpi')
-                if test_2 is True:
+            if has_o(line) and uses_only(line, 'ogwnhpi'):
                     print(line)
             
 
