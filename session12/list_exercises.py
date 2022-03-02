@@ -39,13 +39,23 @@ def cumsum(t):
     [1, 3, 6]
     """
     
+    # Create a new list
     new_t = []
+
+    # Iterate each element in t
     for i in t:
+
+        # First element exemption
+        # Simply assign the number into a storage variable for the next use
         if i == t[0]:
             prev_i = i
             new_t.append(i)
+
         else:
+            # Append the sum of the previous and current element to the last of the list
             new_t.append(i + prev_i)
+
+            # Update the previous element to the current element
             prev_i = i + prev_i
     
     return new_t
@@ -63,8 +73,9 @@ def middle(t):
     >>> middle(t)
     [2, 3]
     """
-
+    # Create a new list without the first and the last element of the given list
     new_list = t[1:-1]
+
     return new_list
 
 
@@ -81,8 +92,10 @@ def chop(t):
     >>> t
     [2, 3]
     """
+    # Simply remove the first and the last element of the given list without creating a new ones
     t.remove(t[-1])
     t.remove(t[-1])
+
     return
 
 
@@ -99,9 +112,14 @@ def is_sorted(t):
     >>> is_sorted(['b', 'a'])
     False
     """
+    # Make a copy of the given list in order to avoid double modifications
     new_t = t[:]
+
+    # Sort the new list of the boolean examination
     new_t.sort()
     # print(new_t)
+
+    # Boolean test
     return t == new_t
 
 
@@ -154,17 +172,30 @@ def has_duplicates(s):
     >>> print(has_duplicates('abba'))
     True
     """
+
+    # Create a new list
     s_list = []
+
+    # Extend a string into list components
     s_list.extend(s)
+
+    # Sort the list
     s_list.sort()
     # print(s_list)
+
+    # Iterate each element in the list
     for element in s_list:
-        # print(element)
+        
+        # Assign the first element as the previous element for the sake comparison from the next element on
         if element == s_list[0]:
             prev_element = element
+        
+        # Compare the current element to the previous element
         else:
             if prev_element == element:
                 return True
+
+        # Update the previous element
         prev_element = element
     return False
 
@@ -185,12 +216,22 @@ def has_adjacent_duplicates(s):
     True
     """
     
+    # Create a new list
     list_s = []
+
+    # Extend the components in the string for the sake of comparsion
     list_s.extend(s)
+
+    # Forward comparison in order to minimize computational burden on CPU
     for element in s:
+
+        # In order to avoid "index out of range" error, break the loop at the last element
         if list_s.index(element) + 1 > len(list_s) - 1:
             break
+
+        # Otherwise, compare the current element to the next element
         elif element == list_s[list_s.index(element) + 1]:
+            # Return true if they are the same
             return True
     return False
 
