@@ -1,7 +1,7 @@
 import urllib.request
 import json
 
-APIKEY = '3bada50fc4b8667695d10d85e01d661f'
+APIKEY = '3bada50fc4b8667695d10d85e01d661f' # import from another file to hide sensitive information
 city = 'Wellesley'
 country_code = 'us'
 url = f'http://api.openweathermap.org/data/2.5/weather?q={city},{country_code}&APPID={APIKEY}'

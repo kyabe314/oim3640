@@ -40,7 +40,7 @@ def main():
     # print(h)
     librarian()
     # print(librarian())
-    index_word = 'hello'
+    # index_word = 'hello'
     # print(index_word.lower() in librarian())
     list_of_words = ['hkjbs', 'hello']
     print(has_duplicates(list_of_words))
