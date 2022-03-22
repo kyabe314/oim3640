@@ -1,3 +1,4 @@
+from pickle import NONE
 import random
 import string
 
@@ -116,14 +117,20 @@ def random_word(hist):
     # index -> from 0 to counter - 1
 
     random_number = random.randint(0, counter - 1)
+    print(random_number)
+    list_keys = list(hist.keys())
+    # print(type(list_keys), list_keys)
+    list_values = list(hist.values())
 
-    return hist[random_number], hist[random_number]/counter 
+
+    return list_keys[random_number], str((list_values[random_number]/counter)*100) + '%'
 
     
 
 
 def main():
     hist = process_file('data/Pride and Prejudice.txt', skip_header=True)
+    # print(hist[0])
     # print(hist)
     print('Total number of words:', total_words(hist))
     print('Number of different words:', different_words(hist))
