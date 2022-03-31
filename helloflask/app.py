@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-import math
+from flask import Flask, render_template, request
+from temp_helper import get_temp
 
 app = Flask(__name__)
 
@@ -20,6 +20,19 @@ def hello(name=None):
 @app.route('/square/<number>')
 def square(number=None):
     return str(float(number) ** 2)
+
+@app.route('/weather/', methods=["GET","POST"])
+
+def show_weather():
+    if request.method == "POST":
+        city_name = request.form['city']
+        temperature = get_temp(city_name)
+
+        return render_template('weather-result.html',
+        city=city_name, temp=temperature)
+    else:
+        return render_template('weather-form.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
