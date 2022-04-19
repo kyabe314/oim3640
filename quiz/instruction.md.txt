@@ -1,0 +1,44 @@
+# Quiz Instruction
+This quiz is a simplified version of FIFA Ultimate Team game. In this game:
+1. Each team will be initialized with given name and initial players (if any). 
+2. Each team will choose multiple players from `PLAYERS` which is a dictionary of player's name and his rating.
+3. Team's rating is the average rating of all the players in this team. When there is no player in the team, this team's rating should be 0. 
+4. Each team has one opportunity to choose one player from `LEGENDARIES` which is a dictionary of legendary players (key is the legendary player's name, and value is a tuple of his rating and his chemistry booster value). After choosing a legendary player, the team's rating will be the average rating of all the players in this team (including this legendary player) multiplied by chemistry booster value.
+5. If two teams play against each other, the team with higher rating will always win.
+
+
+To simulate FIFA Ultimate Team game, we need to create a class named `Team` with the following **attributes**: 
+1. `name`: a string representing the team's name
+2. `squad`: a list of all players' names (strings)
+3. `rating`: a float which is the team's rating (see above GAME RULE 3 and 4 on how a team's rating is calculated.)
+
+Please finish the following **methods** for the class `Team`:
+1. An `__init__` method that initializes `name`, `squad`, and `rating` according to GAME RULE 3. Remember, `initial_players` could be `None` or a list of names.
+2. A `__str__` method that returns a string representation of this team, including `name` and all players' names (if any). Please read the expected output below to understand what this method should return.
+3. A method named `choose` that takes a player's name from `PLAYERS`, adds it to `squad` and updates `rating` according to GAME RULE 3.
+4. A method named `choose_legendary` that takes a legendary player's name from `LEGENDARIES`, adds it to `squad` and updates `rating` according to GAME RULE 4. **OPTIONAL**: you can combine `choose` and `choose_legendary` functions into `choose` function by using proper keyword arguments.
+5. A special method that overloads the operator "`>`" to return the result of a game according to GAME RULE 5. Please read the expected output below to understand what this method should return.
+
+### Please DO NOT change code in `main` function!
+
+---
+### The expected output:
+```
+Before choosing squad:
+Real Madrid has Karim Benzema.
+Barcelona has no player yet.
+
+After choosing squad:
+Real Madrid has Karim Benzema, Luka Modric, Kylian Mbappe.
+Barcelona has Pique, Pedri, Robert Lewandowski.
+
+Will Real Madrid win against Barcelona?
+True
+
+After choosing legendary:
+Real Madrid has Karim Benzema, Luka Modric, Kylian Mbappe, Cristiano Ronaldo.
+Barcelona has Pique, Pedri, Robert Lewandowski, Lionel Messi.
+
+Will Real Madrid win against Barcelona?
+False
+```
