@@ -1,3 +1,6 @@
+from mimetypes import init
+
+
 PLAYERS = {
     'Karim Benzema': 93, # player's name: his rating
     'Robert Lewandowski': 94,
@@ -21,24 +24,74 @@ class Team:
         name: string
         initial_players: a list of strings representing initial players in this team.
         """
-        pass
+        self.name = name
+        if initial_players == None:
+            initial_players = []
+        self.initial_team = initial_players
 
     def __str__(self):
         """Return a string representation of this team, including team name and squad."""
-        pass
+
+        if self.initial_team == []:
+            return f'{self.name} has no players yet.'
+        
+        t = [self.name + ' has ']
+
+        for obj in self.initial_team:
+            if obj == self.initial_team[0]:
+                s = str(obj)
+                t.append(s)
+            else:
+                s = ', ' + str(obj)
+                t.append(s)
+
+        return ''.join(t) + '.'
 
     def choose(self, player):
         """choose one player from PLAYERS and update team's rating which is the average rating of entire current squad.
         player: string
         """
-        pass
+        for name in PLAYERS.keys():
+            if name == player:
+                self.initial_team.append(player)
+        
+        counter = 0
+        sum_value = 0
+
+        for key, value in PLAYERS.items():
+            for name in self.initial_team:
+                if name == key:
+                    counter += 1
+                    sum_value += value
+                    self.ratings = sum_value/counter
+
+
 
     def choose_legendary(self, player):
         """choose one player from LEGENDARIES and update team's rating which is the average rating of entire current squad multiplied by legendary's booster.
         player: string
         """
-        pass
 
+        counter = 0
+        sum_ratings = 0
+
+        self.initial_team.append(player)
+        for name in self.initial_team:
+            if name in PLAYERS.keys():
+                sum_ratings += PLAYERS[name]
+                counter += 1
+            if name in LEGENDARIES.keys():
+                sum_ratings += LEGENDARIES[name][0]
+                counter += 1
+                booster = LEGENDARIES[name][1]
+        
+        self.ratings = (sum_ratings/counter) * booster
+        
+    
+    def __gt__(self, other):
+        if self.ratings > other.ratings:
+            return True
+        return False
 
 #############################################
 # Please DO NOT change code in main function!
