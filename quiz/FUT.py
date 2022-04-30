@@ -24,9 +24,13 @@ class Team:
         name: string
         initial_players: a list of strings representing initial players in this team.
         """
+        # forgot to initialize ratings
+        # 
         self.name = name
         if initial_players == None:
             initial_players = []
+            self.ratings = 0
+
         self.initial_team = initial_players
 
     def __str__(self):
@@ -84,7 +88,7 @@ class Team:
                 sum_ratings += LEGENDARIES[name][0]
                 counter += 1
                 booster = LEGENDARIES[name][1]
-        
+        # could have used tuple unpacking
         self.ratings = (sum_ratings/counter) * booster
         
     
